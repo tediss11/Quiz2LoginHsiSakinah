@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Quiz 2 Login Hsi Sakinah</string>
+    <string name="password">Password</string>
+    <string name="nip">NIP</string>
+    <string name="belum_bisa_akses">Belum bisa akses ?</string>
+    <string name="hubungi_cs_ikhwan">Hubungi CS Ikhwan</string>
+    <string name="hubungi_cs_akhwat">Hubungi CS Akhwat</string>
+    <string name="menghubungi_cs_ikhwan">Menghubungi CS Ikhwan</string>
+    <string name="menghubungi_cs_akhwat">Menghubungi CS Akhwat</string>
+    <string name="menuju_halaman_faq">Menuju Halaman FAQ…</string>
+    <string name="lihat_faq">Lihat FAQ</string>
+    <string name="login">Login</string>
+
+</resources>
