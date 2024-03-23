@@ -10,5 +10,9 @@
     <string name="menuju_halaman_faq">Menuju Halaman FAQ…</string>
     <string name="lihat_faq">Lihat FAQ</string>
     <string name="login">Login</string>
+    <string name="nip_dan_password_harus_diisi">NIP dan Password harus diisi</string>
+    <string name="nip_harus_diisi">NIP harus diisi</string>
+    <string name="password_harus_diisi">Password harus diisi</string>
+    <string name="menuju_halaman_beranda">Menuju Halaman Beranda</string>
 
 </resources>

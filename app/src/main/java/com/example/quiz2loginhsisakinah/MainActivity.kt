@@ -148,10 +148,10 @@ fun FormSakinah(
         Button(
             shape = RoundedCornerShape(30),
             onClick = {when{
-                nipInput == "" && passwordInput == "" -> Toast.makeText(context, "NIP dan Password harus diisi", Toast.LENGTH_SHORT).show()
-                nipInput == "" && passwordInput != "" -> Toast.makeText(context, "NIP harus diisi", Toast.LENGTH_SHORT).show()
-                nipInput != "" && passwordInput == "" -> Toast.makeText(context, "Password harus diisi", Toast.LENGTH_SHORT).show()
-                nipInput != "" && passwordInput != "" -> Toast.makeText(context, "Menuju Halaman Beranda", Toast.LENGTH_SHORT).show()
+                nipInput == "" && passwordInput == "" -> Toast.makeText(context, R.string.nip_dan_password_harus_diisi, Toast.LENGTH_SHORT).show()
+                nipInput == "" && passwordInput != "" -> Toast.makeText(context, R.string.nip_harus_diisi, Toast.LENGTH_SHORT).show()
+                nipInput != "" && passwordInput == "" -> Toast.makeText(context, R.string.password_harus_diisi, Toast.LENGTH_SHORT).show()
+                nipInput != "" && passwordInput != "" -> Toast.makeText(context, R.string.menuju_halaman_beranda, Toast.LENGTH_SHORT).show()
             }},
 
             colors = ButtonDefaults.buttonColors(Color(0xff2596be)),
