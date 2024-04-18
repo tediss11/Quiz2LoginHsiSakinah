@@ -1,10 +1,12 @@
 package com.example.quiz2loginhsisakinah
 
+import android.content.Context
 import androidx.compose.material3.Icon
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.annotation.StringRes
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -77,6 +79,7 @@ fun FormSakinah(
     var nipInput by remember { mutableStateOf("") }
     var passwordInput by remember { mutableStateOf("") }
     val context = LocalContext.current
+    
     Column(
         modifier = modifier
             .fillMaxWidth()
@@ -148,10 +151,10 @@ fun FormSakinah(
         Button(
             shape = RoundedCornerShape(30),
             onClick = {when{
-                nipInput == "" && passwordInput == "" -> Toast.makeText(context, R.string.nip_dan_password_harus_diisi, Toast.LENGTH_SHORT).show()
-                nipInput == "" && passwordInput != "" -> Toast.makeText(context, R.string.nip_harus_diisi, Toast.LENGTH_SHORT).show()
-                nipInput != "" && passwordInput == "" -> Toast.makeText(context, R.string.password_harus_diisi, Toast.LENGTH_SHORT).show()
-                nipInput != "" && passwordInput != "" -> Toast.makeText(context, R.string.menuju_halaman_beranda, Toast.LENGTH_SHORT).show()
+                nipInput == "" && passwordInput == "" -> clickToast(context, R.string.nip_dan_password_harus_diisi)
+                nipInput == "" && passwordInput != "" -> clickToast(context, R.string.nip_harus_diisi)
+                nipInput != "" && passwordInput == "" -> clickToast(context, R.string.password_harus_diisi)
+                nipInput != "" && passwordInput != "" -> clickToast(context, R.string.menuju_halaman_beranda)
             }},
 
             colors = ButtonDefaults.buttonColors(Color(0xff2596be)),
@@ -188,9 +191,7 @@ fun FormSakinah(
             text = stringResource(R.string.hubungi_cs_ikhwan),
             modifier = modifier
                 .clickable {
-                    Toast
-                        .makeText(context, R.string.menghubungi_cs_ikhwan, Toast.LENGTH_SHORT)
-                        .show()
+                    clickToast(context, R.string.menghubungi_cs_ikhwan)
                 }
                 .fillMaxWidth()
                 .padding(bottom = 8.dp),
@@ -205,9 +206,7 @@ fun FormSakinah(
             text = stringResource(R.string.hubungi_cs_akhwat),
             modifier = modifier
                 .clickable {
-                    Toast
-                        .makeText(context, R.string.menghubungi_cs_akhwat, Toast.LENGTH_SHORT)
-                        .show()
+                    clickToast(context, R.string.menghubungi_cs_akhwat )
                 }
                 .fillMaxWidth()
                 .padding(bottom = 8.dp),
@@ -223,7 +222,7 @@ fun FormSakinah(
             shape = RoundedCornerShape(30),
             modifier = modifier.fillMaxWidth(),
             onClick = {
-                Toast.makeText(context, R.string.menuju_halaman_faq, Toast.LENGTH_SHORT).show()
+                clickToast(context, R.string.menuju_halaman_faq)
             },
         ) {
             Row {
@@ -266,6 +265,12 @@ fun EditNipPassword(
             .fillMaxWidth()
     )
 }
+
+
+fun clickToast(context : Context, @StringRes content: Int) {
+    Toast.makeText(context, content, Toast.LENGTH_SHORT).show()
+}
+
 
 @Preview(showBackground = true)
 @Composable
